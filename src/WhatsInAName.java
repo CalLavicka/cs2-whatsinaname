@@ -1,10 +1,16 @@
+import java.util.Scanner;
 
 public class WhatsInAName {
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		String name = "";
+		name = scan.nextLine();
+		char[] input = name.toCharArray();
 		
+		System.out.println(numberVowels(input));
 	}
+	
 	
 	// Grace
 	static int consonantFrequency(char[] array, char consonant) {
@@ -16,12 +22,22 @@ public class WhatsInAName {
 	}
 	
 	// Jocelyn
+	
 	static void convertLowercase(char[] array) {
+		for(int i=0;i < array.length; i++) {
+			array[i] = Character.toLowerCase(array[i]);
+		}
 		
 	}
 	
 	static int numberVowels(char[] array) {
-		return 0;
+		int numv = 0;
+		for(int i=0;i < array.length; i++) {
+			if(array[i] == 'a' || array[i] == 'e' || array[i] == 'i' || array[i] == 'o' || array[i] == 'u') {
+				numv ++;
+			}
+		}
+		return numv;
 	}
 	
 	// Priya
