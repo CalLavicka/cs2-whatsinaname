@@ -36,10 +36,25 @@ public class WhatsInAName {
 	// Grace
 
 	static int consonantFrequency(char[] array, char consonant) {
-		return 0;
+		int frequency = 0;
+		for (int i = 0; i < array.length; i++) {
+			if(array[i] == consonant) {
+				frequency ++;
+
+			}
+		}
+
+		return frequency;
 	}
 
 	static boolean lastnameHyphen(char[] array) {
+		char hyphen = '-';
+		for (int i = array.length -1; array[i] != ' '; i--) {
+			if(array[i] == hyphen) {
+				return true;
+			}
+
+		}
 		return false;
 	}
 
@@ -84,6 +99,7 @@ public class WhatsInAName {
 	}
 
 	static char[] returnMiddleName(char[] array) {
+
 		char[] middlename = new char[500];
 
 		int min = 0;
@@ -111,6 +127,7 @@ public class WhatsInAName {
 	for(int i=min; i<max; i++) {
 		middlename[i] = array[i];
 		
+
 	}
 	
 	return middlename;
