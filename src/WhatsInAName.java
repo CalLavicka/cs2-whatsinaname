@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Random;
@@ -6,33 +7,30 @@ import java.util.Scanner;
 public class WhatsInAName {
 
 	public static void main(String[] args) {
-
-
-		// TODO Auto-generated method stub
-
-		//middle name random
-
-		//shuffle
-
-		//something else
+		//grace menu bonus:
 		Scanner scan = new Scanner(System.in);
-		String s = scan.nextLine();
-		char [] name = s.toCharArray();
-
-			
-		//print shuffle array
-		System.out.println(shuffleArray(name));
-		
-		//print uppercase name
-		convertUppercase(name);
-		
-	   //print middle name
-	   printArray(returnMiddleName(name));
-	
-
-
+		System.out.println("Whats yo name");
+		String name = " ";
+		name = scan.nextLine() ;
+		name.toCharArray();
+		char[] input = name.toCharArray();
+		System.out.println("Welcome to the main menu: Select what you would like to do with your beautiful name! Type in the number that you want.");
+		System.out.println("1. Reverse and display array 2. Determine the number of vowels. 3. Consonant frequency. 4. Return first name. 5. Return last name. 6. Return middle name(s) 7. Return boolean if last name contains a hyphen 8. Method to convert to lowercase 9. Method to convert to uppercase10. Modify array to create a random name (mix up letters) 11. Return boolean if first name is a palindrome");
+		System.out.println("Type a number");
+		String choice = " ";
+		choice = scan.nextLine() ;
+		if(choice.equals("3")) {
+			String conchoice = " ";
+			System.out.println("What consonant would you like to search for??");
+			conchoice = scan.nextLine();
+			conchoice.toCharArray();
+			char[] coo = conchoice.toCharArray();
+			System.out.println(consonantFrequency(input, coo[0] ));
+		}
+		if(choice.equals("7")) {
+			System.out.println(lastnameHyphen(input));
+		}
 	}
-
 	// Grace
 
 	static int consonantFrequency(char[] array, char consonant) {
@@ -40,23 +38,22 @@ public class WhatsInAName {
 		for (int i = 0; i < array.length; i++) {
 			if(array[i] == consonant) {
 				frequency ++;
-
 			}
 		}
-
 		return frequency;
 	}
-
 	static boolean lastnameHyphen(char[] array) {
 		char hyphen = '-';
-		for (int i = array.length -1; array[i] != ' '; i--) {
+		for (int i = array.length -1; array[i] != ' ' && i>0; i--) {
 			if(array[i] == hyphen) {
 				return true;
 			}
-
 		}
 		return false;
 	}
+
+
+
 
 	// Jocelyn
 	static void convertLowercase(char[] array) {
