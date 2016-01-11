@@ -8,9 +8,18 @@ public class WhatsInAName {
 		name = scan.nextLine();
 		char[] input = name.toCharArray();
 		
+		boolean title = includesTitle(input);
+			if(title == true) {
+				System.out.println("You have a title!");
+			}
+			else {
+				System.out.println("You do not have a title. You are not special. Be better. ");
+			}
+		
+		
 		System.out.println(numberVowels(input));
 	}
-	
+
 	
 	// Grace
 	static int consonantFrequency(char[] array, char consonant) {
@@ -40,6 +49,15 @@ public class WhatsInAName {
 		return numv;
 	}
 	
+	//BONUS: Return boolean if name contains a title/distinction (“Dr.”, “Sir”, “Esq”, “Ph.d”, "Madam,")
+	
+	
+	
+
+	
+	
+	
+	}
 	// Priya
 	static void convertUppercase(char[] array) {
 		
