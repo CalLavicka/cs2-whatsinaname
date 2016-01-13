@@ -29,7 +29,7 @@ public class WhatsInAName {
 			System.out.println(consonantFrequency(input, coo[0] ));
 		}
 		if(choice.equals("4"){
-			
+		name = returnFirstName(input).toString();
 		}
 		if(choice.equals("7")) {
 			System.out.println(lastnameHyphen(input));
