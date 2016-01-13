@@ -28,8 +28,21 @@ public class WhatsInAName {
 			char[] coo = conchoice.toCharArray();
 			System.out.println(consonantFrequency(input, coo[0] ));
 		}
+		if(choice.equals("4"){
+			
+		}
 		if(choice.equals("7")) {
 			System.out.println(lastnameHyphen(input));
+		}
+		if(choice.equals("11"){
+			boolean palindrome = true;
+			palindrome = firstNamePalindrome(input, palindrome, name);
+			if(palindrome == false){
+			System.out.println("your name is not a pallindrome");
+		}
+		else if(palindrome==true) {
+			System.out.println("your name is a pallindrome");
+		}
 		}
 	}
 	// Grace
@@ -149,12 +162,51 @@ static void printArray(char[] array){
 }
 
 // Sara
-static boolean firstNamePalindrome(char[] array) {
-	return false;
+static boolean firstNamePalindrome(char[] array, boolean a, String name) {
+		char[] firstname = new char[100];
+
+		//get the first name:
+		firstname = returnFirstName(array);
+		//get the reverse of the first name:
+		char[] output = new char[firstname.length];
+		int j = 0;
+		for(int i = firstname.length-1; i >= 0; i--)
+		{
+			output[j] = firstname[i];
+			j++;
+		}
+		//find the beginning of the backwards first name:
+		int startspot = 0;
+		for(int i = 0; i < output.length; i++){
+			if(output[i]!=0){
+				//i is the answer
+				startspot = i;
+				break;
+			}
+		}
+		//compare
+		for(int i1=startspot; i1 < output.length; i1++){
+			if(output[i1]!=firstname[i1-startspot]){ //brings it to start of firstname
+				a= false;
+			}
+			else{
+				a= true;
+			}
+		}
+		System.out.println();
+		return a;
+
 }
 
 static char[] returnFirstName(char[] array) {
-	return null;
+		char[] firstname = new char[100];
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == ' ') {
+				break;
+			}
+			firstname[i] = array[i];
+		}
+		return firstname;
 }
 
 // Jason
